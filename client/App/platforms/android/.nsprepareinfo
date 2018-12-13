@@ -1,0 +1,17 @@
+{
+	"time": "Thu Dec 13 2018 08:06:47 GMT+0200 (SAST)",
+	"nativePlatformStatus": "3",
+	"bundle": true,
+	"release": false,
+	"changesRequireBuild": true,
+	"projectFileHash": "4db2eb7ace2ca7d62eddfaa0c7965c6d6847fe50f45f024b7ddc772e91685d7a",
+	"changesRequireBuildTime": "Thu Dec 13 2018 08:06:47 GMT+0200 (SAST)",
+	"appFilesHashes": {
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/fonts/.gitkeep": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/app.scss": "4d270169be7912a094c9782892a0562cf9b0d8f4",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/assets/images/NativeScript-Vue.png": "31f09bdba72293198ee2e2a83c4fe5aa5744bc3d",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/components/App.vue": "cbbf5b716dd183edcfbf8a302c92966b72d4c7de",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/main.js": "081c86565fe3b6581984fa8d9a681e94ba8724bd",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/package.json": "92a45382e7abe227510220c6c2c1f50e91123ff5"
+	}
+}

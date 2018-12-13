@@ -1,0 +1,4 @@
+/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/src/main/assets/app/bundle.js
+/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/src/main/assets/app/starter.js
+/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/src/main/assets/app/tns-java-classes.js
+/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/src/main/assets/app/vendor.js

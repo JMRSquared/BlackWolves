@@ -1,0 +1,7 @@
+#Thu Dec 13 08:11:09 SAST 2018
+base.0=/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/build/intermediates/transforms/dexMerger/debug/1
