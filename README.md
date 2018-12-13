@@ -8,16 +8,13 @@
 
 ### How to run
 
-`cd server`
-`docker-compose build`
-`docker-compose up`
-
-```
-  *DONE*
+```shell
+cd server
+docker-compose build
+docker-compose up
 ```
 
-
-## Client
+# Client
 
 > The client consist of a web app and a mobile app (Android and IOS) , the web app is in VueJS and the mobile app in in Nativescript-Vue
 
@@ -25,19 +22,22 @@
 
 #### WEB
 
-`cd client/WEB`
-`npm install`
-`npm run dev`
-
-```
-  *DONE*
+```shell
+cd client/WEB
+npm install
+npm run dev
 ```
 
 #### App
 
-`cd client/App`
-`tns debug android --hmr` or `tns debug ios --hmr`
-
+```shell
+cd client/App
+tns debug android --hmr
 ```
-  *DONE*
+
+or
+
+```shell
+cd client/App
+tns debug android --hmr
 ```
