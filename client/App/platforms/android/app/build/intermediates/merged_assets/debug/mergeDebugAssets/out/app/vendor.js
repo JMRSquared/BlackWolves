@@ -271,6 +271,154 @@ module.exports = function (loadModuleFn) {
 
 /***/ }),
 
+/***/ "../node_modules/nativescript-fonticon/lib.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.mapCss = function (data, debug) {
+  var map = {};
+  var sets = data.split('}');
+
+  for (var _i = 0, sets_1 = sets; _i < sets_1.length; _i++) {
+    var set = sets_1[_i];
+    var pair = set.split(/:before\s*{/);
+    var keyGroups = pair[0];
+    var keys = keyGroups.split(',');
+
+    if (pair[1]) {
+      var value = exports.cleanValue(pair[1]);
+
+      if (!value) {
+        continue;
+      }
+
+      for (var _a = 0, keys_1 = keys; _a < keys_1.length; _a++) {
+        var key = keys_1[_a];
+        key = key.trim().slice(1).split(':before')[0];
+        map[key] = String.fromCharCode(parseInt(value.substring(2), 16));
+
+        if (debug) {
+          console.log(key + ": " + value);
+        }
+      }
+    }
+  }
+
+  return map;
+};
+
+exports.cleanValue = function (val) {
+  var matches = val.match(/content:\s*"\\f([^"]+)"/i);
+
+  if (matches) {
+    return "\\uf" + matches[1];
+  }
+
+  return void 0;
+};
+
+/***/ }),
+
+/***/ "../node_modules/nativescript-fonticon/nativescript-fonticon.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var file_system_1 = __webpack_require__("../node_modules/tns-core-modules/file-system/file-system.js");
+
+var lib = __webpack_require__("../node_modules/nativescript-fonticon/lib.js");
+
+var TNSFontIcon = function () {
+  function TNSFontIcon() {}
+
+  TNSFontIcon.loadCss = function () {
+    var cnt = 0;
+    var currentName;
+    var fontIconCollections = Object.keys(TNSFontIcon.paths);
+
+    if (TNSFontIcon.debug) {
+      console.log("Collections to load: " + fontIconCollections);
+    }
+
+    var initCollection = function initCollection() {
+      currentName = fontIconCollections[cnt];
+      TNSFontIcon.css[currentName] = {};
+    };
+
+    var loadFile = function loadFile(path) {
+      if (TNSFontIcon.debug) {
+        console.log('----------');
+        console.log("Loading collection '" + currentName + "' from file: " + path);
+      }
+
+      var cssFile = file_system_1.knownFolders.currentApp().getFile(path);
+      return new Promise(function (resolve, reject) {
+        cssFile.readText().then(function (data) {
+          var map = lib.mapCss(data, TNSFontIcon.debug);
+          TNSFontIcon.css[currentName] = map;
+          resolve();
+        }, function (err) {
+          reject(err);
+        });
+      });
+    };
+
+    var loadFiles = function loadFiles() {
+      return new Promise(function (resolve) {
+        initCollection();
+
+        if (cnt < fontIconCollections.length) {
+          loadFile(TNSFontIcon.paths[currentName]).then(function () {
+            cnt++;
+            return loadFiles().then(function () {
+              resolve();
+            });
+          });
+        } else {
+          resolve();
+        }
+      });
+    };
+
+    return loadFiles();
+  };
+
+  TNSFontIcon.css = {};
+  TNSFontIcon.paths = {};
+  TNSFontIcon.debug = false;
+  return TNSFontIcon;
+}();
+
+exports.TNSFontIcon = TNSFontIcon;
+
+function fonticon(value) {
+  if (value) {
+    if (value.indexOf('-') > -1) {
+      var prefix = value.split('-')[0];
+      return TNSFontIcon.css[prefix][value];
+    } else {
+      console.log('Fonticon classname did not contain a prefix. i.e., \'fa-bluetooth\'');
+    }
+  }
+
+  return value;
+}
+
+exports.fonticon = fonticon;
+
+/***/ }),
+
 /***/ "../node_modules/nativescript-ui-sidedrawer/ui-sidedrawer.common.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1137,6 +1285,142 @@ function (_super) {
 }(DrawerTransitionBase);
 
 exports.SlideInOnTopTransition = SlideInOnTopTransition;
+
+/***/ }),
+
+/***/ "../node_modules/nativescript-vue-navigator/components/Navigator.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    defaultRoute: {
+      type: String,
+      default: '/'
+    }
+  },
+
+  render(h) {
+    this.slotContent = this.slotContent || h(this.defaultRouteComponent);
+    return h('frame', {
+      on: {
+        loaded: this.onFrameLoaded
+      }
+    }, [this.slotContent]);
+  },
+
+  created() {
+    this.defaultRouteComponent = this.$navigator._resolveComponent(this.$props.defaultRoute);
+  },
+
+  methods: {
+    onFrameLoaded(_ref) {
+      let object = _ref.object;
+
+      if (object.__defined__custom_currentEntry) {
+        // don't try do define the property multiple times
+        return;
+      }
+
+      object.__defined__custom_currentEntry = true;
+      const self = this;
+      let _currentEntry = object._currentEntry;
+      Object.defineProperty(object, '_currentEntry', {
+        get() {
+          return _currentEntry;
+        },
+
+        set(value) {
+          _currentEntry = value;
+
+          if (value && value.resolvedPage) {
+            self.$navigator._updatePath(value.resolvedPage.__path || self.defaultRoute || '');
+          }
+        }
+
+      });
+    }
+
+  }
+});
+
+/***/ }),
+
+/***/ "../node_modules/nativescript-vue-navigator/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return install; });
+/* harmony import */ var _components_Navigator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("../node_modules/nativescript-vue-navigator/components/Navigator.js");
+
+function install(Vue, _ref) {
+  let routes = _ref.routes;
+  Vue.component('Navigator', _components_Navigator__WEBPACK_IMPORTED_MODULE_0__["default"]);
+  Object.keys(routes).map(path => {
+    routes[path].component.__path = path;
+  });
+  Vue.mixin({
+    mounted() {
+      // attach the current path if set to the root element
+      if (this.$options.__path) {
+        this.$el.setAttribute('__path', this.$options.__path);
+      }
+    }
+
+  });
+  Vue.prototype.$navigator = new Vue({
+    data: {
+      path: false,
+      defaultPath: '/'
+    },
+    computed: {
+      route() {
+        return routes[this.path || this.defaultPath];
+      }
+
+    },
+    methods: {
+      _resolveComponent(defaultPath) {
+        if (defaultPath) this.defaultPath = defaultPath;
+
+        if (this.route) {
+          return this.route.component;
+        }
+
+        return false;
+      },
+
+      _updatePath(path) {
+        this.path = path;
+      },
+
+      navigate(to, options) {
+        const matchedRoute = routes[to];
+
+        if (!matchedRoute) {
+          if (true) {
+            throw new Error(`Navigating to a route that doesnt exist: ${to}`);
+          }
+
+          return false;
+        }
+
+        this.$navigateTo(matchedRoute.component, options);
+      },
+
+      back() {
+        for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        this.$navigateBack.call(this, args);
+      }
+
+    }
+  });
+}
 
 /***/ }),
 

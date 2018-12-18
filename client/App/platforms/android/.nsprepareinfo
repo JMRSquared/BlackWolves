@@ -1,17 +1,23 @@
 {
-	"time": "Thu Dec 13 2018 08:06:47 GMT+0200 (SAST)",
+	"time": "Tue Dec 18 2018 20:45:24 GMT+0200 (SAST)",
 	"nativePlatformStatus": "3",
 	"bundle": true,
 	"release": false,
 	"changesRequireBuild": true,
-	"projectFileHash": "4db2eb7ace2ca7d62eddfaa0c7965c6d6847fe50f45f024b7ddc772e91685d7a",
-	"changesRequireBuildTime": "Thu Dec 13 2018 08:06:47 GMT+0200 (SAST)",
+	"projectFileHash": "595310e9472c79700f0473798ea42059ab1c7585b7f29aaa103c95c45c0f0dbd",
+	"changesRequireBuildTime": "Tue Dec 18 2018 20:45:24 GMT+0200 (SAST)",
 	"appFilesHashes": {
 		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/fonts/.gitkeep": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/app.scss": "4d270169be7912a094c9782892a0562cf9b0d8f4",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/app.scss": "a355f12e9ff5355c18eedaa3798944886794ad0b",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/assets/_variables.scss": "3553120ad7a1051cb1542c20409dfea62801150e",
 		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/assets/images/NativeScript-Vue.png": "31f09bdba72293198ee2e2a83c4fe5aa5744bc3d",
-		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/components/App.vue": "cbbf5b716dd183edcfbf8a302c92966b72d4c7de",
-		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/main.js": "081c86565fe3b6581984fa8d9a681e94ba8724bd",
-		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/package.json": "92a45382e7abe227510220c6c2c1f50e91123ff5"
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/components/App.vue": "d55fa9fb852fe5cdf95d8f0d72195667a64a2219",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/components/Home.vue": "e858bccd804579532ca1ca2a9a54bf6703c0a44e",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/components/Login.vue": "1b1c0f944a7dce619733a99ac5a7865d53098510",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/main.js": "642ec561c0c1de2a898461f4a93e3c151b3c1faa",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/package.json": "92a45382e7abe227510220c6c2c1f50e91123ff5",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/services/router.js": "e8e7d2d7b0b5acad9df8aa9592bb37749eb50e36",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/assets/materialdesignicons.css": "df96a4c30d91a3deb4f34330885c4fa23cea2732",
+		"/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/app/fonts/materialdesignicons.ttf": "28636aaed0e45cc627bb0ae793b7de6f6f50436d"
 	}
 }

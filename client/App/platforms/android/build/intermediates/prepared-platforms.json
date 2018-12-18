@@ -1,9 +1,11 @@
 {
-    "vuex": true,
-    "nativescript-ui-sidedrawer": true,
+    "nativescript-fonticon": true,
     "nativescript-theme-core": true,
+    "nativescript-ui-sidedrawer": true,
     "nativescript-vue": true,
+    "nativescript-vue-navigator": true,
     "tns-core-modules": true,
+    "vuex": true,
     "nativescript-ui-core": true,
     "tns-core-modules-widgets": true,
     "tslib": true

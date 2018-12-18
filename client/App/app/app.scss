@@ -8,3 +8,50 @@
 
 // Global SCSS styling
 // @see https://docs.nativescript.org/ui/styling
+
+@import 'assets/variables';
+
+.mdi {
+    font-family: "Material Design Icons", "materialdesignicons";
+}
+
+.text-red {
+    color: $red;
+}
+
+.text-black {
+    color: $black;
+}
+
+.text-grey {
+    color: $grey;
+}
+
+.text-white {
+    color: $white;
+}
+
+.text-greywhite {
+    color: $greywhite;
+}
+
+
+.background-red {
+    background-color: $red;
+}
+
+.background-black {
+    background-color: $black;
+}
+
+.background-grey {
+    background-color: $grey;
+}
+
+.background-white {
+    background-color: $white;
+}
+
+.background-greywhite {
+    background-color: $greywhite;
+}

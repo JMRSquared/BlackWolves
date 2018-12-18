@@ -40,4 +40,3 @@
 /media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/build/exploded-dependencies/7/classes.jar
 /media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/build/exploded-dependencies/8/classes.jar
 /media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/build/exploded-dependencies/9/classes.jar
-/media/lavhe/6D7C4DA71DA9CC1D/Play/CODE/BlackWolves/client/App/platforms/android/app/build/intermediates/javac/debug

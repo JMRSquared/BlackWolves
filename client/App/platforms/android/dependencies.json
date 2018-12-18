@@ -1,11 +1,15 @@
 [
     {
-        "name": "nativescript-ui-sidedrawer",
-        "directory": "../../node_modules/nativescript-ui-sidedrawer"
+        "name": "nativescript-fonticon",
+        "directory": "../../node_modules/nativescript-fonticon"
     },
     {
         "name": "nativescript-theme-core",
         "directory": "../../node_modules/nativescript-theme-core"
+    },
+    {
+        "name": "nativescript-ui-sidedrawer",
+        "directory": "../../node_modules/nativescript-ui-sidedrawer"
     },
     {
         "name": "nativescript-vue",
